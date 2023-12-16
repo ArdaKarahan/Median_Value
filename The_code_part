@@ -1,0 +1,36 @@
+mylist = list()
+while True:
+    x = int(input("please enter a number: "))
+    if x == -1:                                       #It's going to stop when user enters -1
+        break
+    else:
+        mylist.append(x)
+
+n = len(mylist)
+mylist.sort()
+if n % 2 == 0:                                        
+    a = (mylist[int(n/2)] + mylist[int(n/2-1)])/2
+else:
+    a = mylist[int((n-1)/2)]
+"""
+This part is a little more complicated.
+
+If the length of our list(n value) is an even number,
+we are going to get the two values in the middle of the
+list. To do that we have to get the index numbers of 
+those two values. Index value of the lesser one is n/2-1
+and the bigger one is n/2 since index values are started 
+from "0". Then we perform a simple addition and divide the
+result by 2.
+
+However if the length of the list(n value) is an odd number,
+we are going to get only one number which is in the middle of
+the list. We again substract 1 from n value since index numbers
+start from "0" and then we divide It by 2 in order to get the
+index value of the middle one.
+
+And the rest is history
+"""
+
+print(mylist)
+print(a)
